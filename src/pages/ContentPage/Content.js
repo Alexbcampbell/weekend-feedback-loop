@@ -15,8 +15,6 @@ class Content extends Component {
   }
 }
 
-const mapStoreToProps = (store) => ({
-  store,
-});
+const mapStoreToProps = (store) => ({ store });
 
 export default connect(mapStoreToProps)(Content);

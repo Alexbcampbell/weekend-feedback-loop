@@ -6,7 +6,10 @@ class Support extends Component {
     return (
       <div>
         <p>How well are you being supported?</p>
-        <input type="text" placeholder="Support?" />
+        <input type="number" placeholder="Support?" />
+        <div>
+          <button>Next</button>
+        </div>
       </div>
     );
   }
