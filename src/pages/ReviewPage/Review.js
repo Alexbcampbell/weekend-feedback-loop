@@ -10,7 +10,7 @@ class Review extends Component {
       support: this.props.store.supportReducer,
       comments: this.props.store.commentReducer,
     };
-    console.log(dataForServer);
+    console.log('data to be sent', dataForServer);
     axios
       .post('/review', dataForServer)
       .then(
