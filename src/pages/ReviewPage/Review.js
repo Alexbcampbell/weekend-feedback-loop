@@ -23,7 +23,7 @@ class Review extends Component {
         console.log(err);
         alert('Feedback did not get saved');
       });
-    // this.props.history.push('/');
+    this.props.history.push('/thanks');
   };
   render() {
     return (
