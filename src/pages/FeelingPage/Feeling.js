@@ -2,20 +2,40 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Feeling extends Component {
+  state = {
+    feeling: '',
+  };
   onFeelingClick = (feeling) => (event) => {
     console.log(feeling);
     this.props.dispatch({
       type: 'ADD_FEELING',
-      payload: feeling,
+      payload: this.state,
     });
+    this.props.history.push('/content');
   };
+
+  onInputFeeling = (input) => (event) => {
+    this.setState(
+      {
+        [input]: event.target.value,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
+
   render() {
     return (
       <div>
         <p>How are you feeling today?</p>
-        <input type="number" placeholder="Feeling?" />
+        <input
+          type="number"
+          onChange={this.onInputFeeling('feeling')}
+          placeholder="Feeling?"
+        />
         <div>
-          <button onClick={this.onFeelingClick('')}>Next</button>
+          <button onClick={this.onFeelingClick('feeling')}>Next</button>
         </div>
       </div>
     );
