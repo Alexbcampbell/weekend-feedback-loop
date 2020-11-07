@@ -7,6 +7,7 @@ import Feeling from '../../pages/FeelingPage/Feeling';
 import Content from '../../pages/ContentPage/Content';
 import Support from '../../pages/SupportPage/Support';
 import Comment from '../../pages/CommentPage/Comment';
+import Review from '../../pages/ReviewPage/Review';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path="/content" component={Content} />
           <Route exact path="/support" component={Support} />
           <Route exact path="/comment" component={Comment} />
+          <Route exact path="/review" component={Review} />
         </div>
       </Router>
     );
