@@ -1,9 +1,31 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Review extends Component {
+  submitFeedback = (event) => {
+    const dataForServer = {
+      feeling: this.props.store.feelingReducer,
+      understanding: this.props.store.contentReducer,
+      support: this.props.store.supportReducer,
+      comments: this.props.store.commentReducer,
+    };
+    console.log(dataForServer);
+    axios
+      .post('/review', dataForServer)
+      .then(
+        this.props.dispatch({ type: 'CLEAR_FEELING' }),
+        this.props.dispatch({ type: 'CLEAR_CONTENT' }),
+        this.props.dispatch({ type: 'CLEAR_SUPPORT' }),
+        this.props.dispatch({ type: 'CLEAR_COMMENT' })
+      )
+      .catch((err) => {
+        console.log(err);
+        alert('Feedback did not get saved');
+      });
+    // this.props.history.push('/');
+  };
   render() {
-    console.log(this.props);
     return (
       <div>
         <p>Review your feedback</p>
@@ -20,7 +42,7 @@ class Review extends Component {
           Comments: <span>{this.props.store.commentReducer.comments}</span>
         </p>
         <div>
-          <button>Submit</button>
+          <button onClick={this.submitFeedback}>Submit</button>
         </div>
       </div>
     );

@@ -11,6 +11,8 @@ import logger from 'redux-logger';
 const feelingReducer = (state = '', action) => {
   if (action.type === 'ADD_FEELING') {
     return action.payload;
+  } else if (action.type === 'CLEAR_FEELING') {
+    return '';
   }
   return state;
 };
@@ -18,6 +20,8 @@ const feelingReducer = (state = '', action) => {
 const contentReducer = (state = '', action) => {
   if (action.type === 'ADD_CONTENT') {
     return action.payload;
+  } else if (action.type === 'CLEAR_CONTENT') {
+    return '';
   }
   return state;
 };
@@ -25,6 +29,8 @@ const contentReducer = (state = '', action) => {
 const supportReducer = (state = '', action) => {
   if (action.type === 'ADD_SUPPORT') {
     return action.payload;
+  } else if (action.type === 'CLEAR_SUPPORT') {
+    return '';
   }
   return state;
 };
@@ -32,15 +38,17 @@ const supportReducer = (state = '', action) => {
 const commentReducer = (state = '', action) => {
   if (action.type === 'ADD_COMMENT') {
     return action.payload;
+  } else if (action.type === 'CLEAR_COMMENT') {
+    return '';
   }
   return state;
 };
 
-const reviewReducer = (state = {}, action) => {
-  if (action.type === 'DISPLAY_REVIEW') {
-    return [...state, action.payload];
-  }
-};
+// const reviewReducer = (state = {}, action) => {
+//   if (action.type === 'DISPLAY_REVIEW') {
+//     return [...state, action.payload];
+//   }
+// };
 
 const storeInstance = createStore(
   combineReducers({
