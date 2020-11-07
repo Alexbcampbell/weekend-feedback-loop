@@ -3,20 +3,21 @@ import { connect } from 'react-redux';
 
 class Review extends Component {
   render() {
+    console.log(this.props);
     return (
       <div>
         <p>Review your feedback</p>
         <p>
-          Feelings: <span>0</span>
+          Feelings: <span>{this.props.store.feelingReducer.feeling}</span>
         </p>
         <p>
-          Content: <span>0</span>
+          Content: <span>{this.props.store.contentReducer.understanding}</span>
         </p>
         <p>
-          Support: <span>0</span>
+          Support: <span>{this.props.store.supportReducer.support}</span>
         </p>
         <p>
-          Comments: <span>0</span>
+          Comments: <span>{this.props.store.commentReducer.comments}</span>
         </p>
         <div>
           <button>Submit</button>
