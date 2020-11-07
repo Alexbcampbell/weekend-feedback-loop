@@ -44,12 +44,6 @@ const commentReducer = (state = '', action) => {
   return state;
 };
 
-// const reviewReducer = (state = {}, action) => {
-//   if (action.type === 'DISPLAY_REVIEW') {
-//     return [...state, action.payload];
-//   }
-// };
-
 const storeInstance = createStore(
   combineReducers({
     feelingReducer,
