@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 class Review extends Component {
   submitFeedback = (event) => {
     const dataForServer = {
-      feeling: this.props.store.feelingReducer,
-      understanding: this.props.store.contentReducer,
-      support: this.props.store.supportReducer,
-      comments: this.props.store.commentReducer,
+      feeling: this.props.store.feelingReducer.feeling,
+      understanding: this.props.store.contentReducer.understanding,
+      support: this.props.store.supportReducer.support,
+      comments: this.props.store.commentReducer.comments,
     };
     console.log('data to be sent', dataForServer);
     axios
