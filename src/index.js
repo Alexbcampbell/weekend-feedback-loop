@@ -8,7 +8,43 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const storeInstance = createStore(combineReducers({}), applyMiddleware(logger));
+const feelingReducer = (state = '', action) => {
+  if (action.type === 'ADD_FEELING') {
+    return action.payload;
+  }
+  return state;
+};
+
+const contentReducer = (state = '', action) => {
+  if (action.type === 'ADD_CONTENT') {
+    return action.payload;
+  }
+  return state;
+};
+
+const supportReducer = (state = '', action) => {
+  if (action.type === 'ADD_SUPPORT') {
+    return action.payload;
+  }
+  return state;
+};
+
+const commentReducer = (state = '', action) => {
+  if (action.type === 'ADD_COMMENT') {
+    return action.payload;
+  }
+  return state;
+};
+
+const storeInstance = createStore(
+  combineReducers({
+    feelingReducer,
+    contentReducer,
+    supportReducer,
+    commentReducer,
+  }),
+  applyMiddleware(logger)
+);
 
 ReactDOM.render(
   <Provider store={storeInstance}>

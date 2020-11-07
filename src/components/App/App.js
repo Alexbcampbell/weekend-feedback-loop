@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import './App.css';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import Feeling from '../../pages/FeelingPage/Feeling';
 import Content from '../../pages/ContentPage/Content';
@@ -21,9 +21,9 @@ class App extends Component {
           </header>
           <br />
           <Route exact path="/" component={Feeling} />
-          <Route exact path="/Content" component={Content} />
-          <Route exact path="/Support" component={Support} />
-          <Route exact path="/Comment" component={Comment} />
+          <Route exact path="/content" component={Content} />
+          <Route exact path="/support" component={Support} />
+          <Route exact path="/comment" component={Comment} />
         </div>
       </Router>
     );
