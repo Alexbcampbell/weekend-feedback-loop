@@ -45,6 +45,7 @@ const commentReducer = (state = '', action) => {
 };
 
 const storeInstance = createStore(
+  //stores all of the information sent from dispatch to reducers.
   combineReducers({
     feelingReducer,
     contentReducer,

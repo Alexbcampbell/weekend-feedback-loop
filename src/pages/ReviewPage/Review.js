@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 class Review extends Component {
   submitFeedback = (event) => {
+    //storing info from reducers as an object that is then sent to my database via axios
     const dataForServer = {
       feeling: this.props.store.feelingReducer.feeling,
       understanding: this.props.store.contentReducer.understanding,

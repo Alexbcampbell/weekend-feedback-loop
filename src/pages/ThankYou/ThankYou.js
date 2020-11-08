@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 class ThankYou extends Component {
   newFeedback = (event) => {
+    //this returns user to the start of the feedback form to start over.
     this.props.history.push('/');
   };
 

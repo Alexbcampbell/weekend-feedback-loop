@@ -8,6 +8,7 @@ class Feeling extends Component {
   };
   onFeelingClick = (feeling) => (event) => {
     if (this.state.feeling === '') {
+      //installed sweetalert to display alert when fields are not completed
       swal('Please complete form!');
     } else {
       console.log(feeling);
