@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class ThankYou extends Component {
   newFeedback = (event) => {
-    this.history.push('/');
+    this.props.history.push('/');
   };
 
   render() {
