@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
+//Page routes
 import Feeling from '../../pages/FeelingPage/Feeling';
 import Content from '../../pages/ContentPage/Content';
 import Support from '../../pages/SupportPage/Support';
