@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 
 class Support extends Component {
   state = {
     support: '',
   };
   onSupportClick = (support) => (event) => {
-    console.log(support);
-    this.props.dispatch({
-      type: 'ADD_SUPPORT',
-      payload: this.state,
-    });
-    this.props.history.push('/comment');
+    if (this.state.support === '') {
+      swal('Please complete form!');
+    } else {
+      console.log(support);
+      this.props.dispatch({
+        type: 'ADD_SUPPORT',
+        payload: this.state,
+      });
+      this.props.history.push('/comment');
+    }
   };
 
   onInputSupport = (input) => (event) => {

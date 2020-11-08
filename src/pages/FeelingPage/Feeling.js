@@ -8,7 +8,7 @@ class Feeling extends Component {
   };
   onFeelingClick = (feeling) => (event) => {
     if (this.state.feeling === '') {
-      swal('Please fill in feeling form!');
+      swal('Please complete form!');
     } else {
       console.log(feeling);
       this.props.dispatch({
