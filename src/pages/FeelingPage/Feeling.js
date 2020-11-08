@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 
 class Feeling extends Component {
   state = {
     feeling: '',
   };
   onFeelingClick = (feeling) => (event) => {
-    console.log(feeling);
-    this.props.dispatch({
-      type: 'ADD_FEELING',
-      payload: this.state,
-    });
-    this.props.history.push('/content');
+    if (this.state.feeling === '') {
+      swal('Please fill in feeling form!');
+    } else {
+      console.log(feeling);
+      this.props.dispatch({
+        type: 'ADD_FEELING',
+        payload: this.state,
+      });
+      this.props.history.push('/content');
+    }
   };
 
   onInputFeeling = (input) => (event) => {
